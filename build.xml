@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="example" default="generate-autoloader">
+    <target name="generate-autoloader">
+        <exec executable="${basedir}/tools/phpab">
+            <arg value="--output"/>
+            <arg path="${basedir}/src/autoload.php"/>
+            <arg path="${basedir}/src"/>
+        </exec>
+    </target>
+
+    <target name="fix">
+        <exec executable="${basedir}/tools/php-cs-fixer">
+            <arg value="fix"/>
+        </exec>
+    </target>
+
+    <target name="test" depends="generate-autoloader">
+        <exec executable="${basedir}/tools/phpunit.phar"/>
+    </target>
+
+    <target name="update-tools">
+        <exec executable="phive">
+            <arg value="--no-progress"/>
+            <arg value="update"/>
+        </exec>
+    </target>
+</project>
+
