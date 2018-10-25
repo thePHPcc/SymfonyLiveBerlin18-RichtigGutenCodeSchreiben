@@ -10,12 +10,15 @@ spl_autoload_register(
                 'example\\capacity' => '/Capacity.php',
                 'example\\container' => '/Container.php',
                 'example\\containerid' => '/ContainerId.php',
+                'example\\docked' => '/Docked.php',
                 'example\\exception' => '/exceptions/Exception.php',
+                'example\\intransit' => '/InTransit.php',
                 'example\\invalidcapacityexception' => '/exceptions/InvalidCapacityException.php',
                 'example\\invalidcontaineridexception' => '/exceptions/InvalidContainerIdException.php',
                 'example\\invalidnameexception' => '/exceptions/InvalidNameException.php',
                 'example\\name' => '/Name.php',
                 'example\\port' => '/Port.php',
+                'example\\position' => '/Position.php',
                 'example\\ship' => '/Ship.php'
             );
         }

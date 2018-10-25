@@ -19,10 +19,16 @@ final class Ship
      */
     private $capacity;
 
-    public function __construct(Name $name, Capacity $capacity)
+    /**
+     * @var Position
+     */
+    private $position;
+
+    public function __construct(Name $name, Capacity $capacity, Position $position)
     {
-        $this->name = $name;
+        $this->name     = $name;
         $this->capacity = $capacity;
+        $this->position = $position;
     }
 
     public function name(): Name
@@ -33,5 +39,10 @@ final class Ship
     public function capacity(): Capacity
     {
         return $this->capacity;
+    }
+
+    public function position(): Position
+    {
+        return $this->position;
     }
 }
