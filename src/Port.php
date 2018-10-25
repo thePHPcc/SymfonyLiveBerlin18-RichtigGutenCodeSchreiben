@@ -1,4 +1,9 @@
 <?php declare(strict_types=1);
+/*
+ * This is example code that is not production-ready. It is intended for studying and learning purposes.
+ *
+ * (c) 2018 thePHP.cc. All rights reserved.
+ */
 
 namespace example;
 
@@ -23,7 +28,7 @@ final class Port
 
     private function ensureNameIsNotEmpty(string $name): void
     {
-        if (empty(trim($name))) {
+        if (empty(\trim($name))) {
             throw new InvalidNameException('Name of port must not be empty');
         }
     }
