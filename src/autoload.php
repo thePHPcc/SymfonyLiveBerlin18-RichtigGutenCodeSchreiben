@@ -7,6 +7,8 @@ spl_autoload_register(
         static $classes = null;
         if ($classes === null) {
             $classes = array(
+                'example\\exception' => '/exceptions/Exception.php',
+                'example\\invalidnameexception' => '/exceptions/InvalidNameException.php',
                 'example\\port' => '/Port.php'
             );
         }

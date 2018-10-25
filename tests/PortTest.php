@@ -13,4 +13,22 @@ final class PortTest extends TestCase
 
         $this->assertEquals($name, $port->name());
     }
+
+    /**
+     * @dataProvider empty_name_provider
+     */
+    public function test_name_cannot_be_empty(string $name): void
+    {
+        $this->expectException(InvalidNameException::class);
+
+        new Port($name);
+    }
+
+    public function empty_name_provider(): array
+    {
+        return [
+            [''],
+            [' ']
+        ];
+    }
 }
