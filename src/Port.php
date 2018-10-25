@@ -10,26 +10,17 @@ namespace example;
 final class Port
 {
     /**
-     * @var string
+     * @var Name
      */
     private $name;
 
-    public function __construct(string $name)
+    public function __construct(Name $name)
     {
-        $this->ensureNameIsNotEmpty($name);
-
         $this->name = $name;
     }
 
-    public function name(): string
+    public function name(): Name
     {
         return $this->name;
-    }
-
-    private function ensureNameIsNotEmpty(string $name): void
-    {
-        if (empty(\trim($name))) {
-            throw new InvalidNameException('Name of port must not be empty');
-        }
     }
 }

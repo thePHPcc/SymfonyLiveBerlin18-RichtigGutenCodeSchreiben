@@ -14,6 +14,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @uses \example\ContainerId
  * @uses \example\Port
+ * @uses \example\Name
  */
 final class ContainerTest extends TestCase
 {
@@ -35,7 +36,7 @@ final class ContainerTest extends TestCase
     protected function setUp(): void
     {
         $this->id          = ContainerId::fromString('CSQU3054383');
-        $this->destination = new Port('Zielhafen');
+        $this->destination = new Port(new Name('Zielhafen'));
         $this->container   = new Container($this->id, $this->destination);
     }
 

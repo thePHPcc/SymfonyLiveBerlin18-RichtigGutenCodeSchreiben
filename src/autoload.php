@@ -14,6 +14,7 @@ spl_autoload_register(
                 'example\\invalidcapacityexception' => '/exceptions/InvalidCapacityException.php',
                 'example\\invalidcontaineridexception' => '/exceptions/InvalidContainerIdException.php',
                 'example\\invalidnameexception' => '/exceptions/InvalidNameException.php',
+                'example\\name' => '/Name.php',
                 'example\\port' => '/Port.php'
             );
         }
