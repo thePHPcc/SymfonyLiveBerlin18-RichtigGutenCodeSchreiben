@@ -3,6 +3,9 @@ namespace example;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \example\Port
+ */
 final class PortTest extends TestCase
 {
     public function test_has_a_name(): void
