@@ -14,35 +14,35 @@ use PHPUnit\Framework\TestCase;
  */
 final class ContainerIdTest extends TestCase
 {
-    public function testCanBeCreatedFromValidString(): void
+    public function test_can_be_created_from_valid_string(): void
     {
         $id = ContainerId::fromString('CSQU3054383');
 
         $this->assertInstanceOf(ContainerId::class, $id);
     }
 
-    public function testCannotBeCreatedFromStringOfWrongLength(): void
+    public function test_cannot_be_created_from_string_of_wrong_length(): void
     {
         $this->expectException(InvalidContainerIdException::class);
 
         ContainerId::fromString('CSQU305438');
     }
 
-    public function testCannotBeCreatedFromStringWithInvalidCargoIdentifier(): void
+    public function test_cannot_be_created_from_string_with_invalid_cargo_identifier(): void
     {
         $this->expectException(InvalidContainerIdException::class);
 
         ContainerId::fromString('CSQA3054383');
     }
 
-    public function testCannotBeCreatedFromStringWithInvalidCheckDigit(): void
+    public function test_cannot_be_created_from_string_with_invalid_check_digit(): void
     {
         $this->expectException(InvalidContainerIdException::class);
 
         ContainerId::fromString('CSQU3054382');
     }
 
-    public function testCanBeUsedAsString(): void
+    public function test_can_be_used_as_string(): void
     {
         $id = 'CSQU3054383';
 
