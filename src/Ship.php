@@ -14,13 +14,24 @@ final class Ship
      */
     private $name;
 
-    public function __construct(Name $name)
+    /**
+     * @var Capacity
+     */
+    private $capacity;
+
+    public function __construct(Name $name, Capacity $capacity)
     {
         $this->name = $name;
+        $this->capacity = $capacity;
     }
 
     public function name(): Name
     {
         return $this->name;
+    }
+
+    public function capacity(): Capacity
+    {
+        return $this->capacity;
     }
 }
