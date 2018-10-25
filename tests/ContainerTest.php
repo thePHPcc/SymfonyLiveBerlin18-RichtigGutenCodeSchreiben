@@ -13,6 +13,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \example\Container
  *
  * @uses \example\ContainerId
+ * @uses \example\Port
  */
 final class ContainerTest extends TestCase
 {
@@ -26,14 +27,25 @@ final class ContainerTest extends TestCase
      */
     private $container;
 
+    /**
+     * @var Port
+     */
+    private $destination;
+
     protected function setUp(): void
     {
-        $this->id        = ContainerId::fromString('CSQU3054383');
-        $this->container = new Container($this->id);
+        $this->id          = ContainerId::fromString('CSQU3054383');
+        $this->destination = new Port('Zielhafen');
+        $this->container   = new Container($this->id, $this->destination);
     }
 
     public function test_has_ISO_6346_ID(): void
     {
         $this->assertEquals($this->id, $this->container->id());
+    }
+
+    public function test_has_destination_port(): void
+    {
+        $this->assertEquals($this->destination, $this->container->destination());
     }
 }

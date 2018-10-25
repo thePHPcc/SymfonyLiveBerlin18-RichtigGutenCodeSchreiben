@@ -14,13 +14,24 @@ class Container
      */
     private $id;
 
-    public function __construct(ContainerId $id)
+    /**
+     * @var Port
+     */
+    private $destination;
+
+    public function __construct(ContainerId $id, Port $destination)
     {
-        $this->id = $id;
+        $this->id          = $id;
+        $this->destination = $destination;
     }
 
     public function id(): ContainerId
     {
         return $this->id;
+    }
+
+    public function destination(): Port
+    {
+        return $this->destination;
     }
 }
