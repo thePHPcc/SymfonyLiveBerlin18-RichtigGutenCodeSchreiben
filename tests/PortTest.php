@@ -10,6 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \example\Port
+ *
  * @uses \example\Name
  */
 final class PortTest extends TestCase
