@@ -7,6 +7,7 @@ spl_autoload_register(
         static $classes = null;
         if ($classes === null) {
             $classes = array(
+                'example\\port' => '/Port.php'
             );
         }
         $cn = strtolower($class);
